@@ -2,19 +2,23 @@ console.log("Connected!")
 // YOU WILL MODIFY THIS FUNCTION TO GET THE PROGRAM TO WORK
 const wordCounter = (value) => {
   // Type into the input and press submit, you will see the value you entered in your console
+  
   console.log(value);
 
   if (value) {
     // COMPLETE THE LOGIC 
-    wordCount.innerHTML = `Word Count: 0`; 
+    let wordCount = value.trim().split(/\s+/).length
+    wordCount.innerHTML = `Word Count: ${wordCount}`; 
   } else {
     // if the value is empty, set the error message value to "Please input text"
-    error.innerHTML = ""; // UPDATE THIS
+    error.innerHTML = "Please input text"; // UPDATE THIS
   }
 }
 
 // OPTIONAL CHALLENGE
 const toggleMode = (btnText) => {
+  let element = document.body;
+  element.classList.toggle("dark-mode");
   // complete the function
 }
 
@@ -24,7 +28,7 @@ const toggleMode = (btnText) => {
 
 // These are query selectors. We will focus on them later in the course
 const textarea = document.querySelector("textarea");
-const form = document.querySelector("form");
+const form = document.querySelector("#form");
 const error = document.querySelector("#error");
 const wordCount = document.querySelector("#word-count");
 const toggleButton = document.querySelector("#bg-switch");
